@@ -261,12 +261,15 @@ def playHand(hand, wordList, n):
             else:
                 # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
                 total += getWordScore(word, n)
-                print(word + " earned " + str(getWordScore(word, n)) + " points. Total: " + str(total) + " points.")
+                print('\"'word'\"' + " earned " + str(getWordScore(word, n)) + " points. Total: " + str(total) + " points.")
                 print
                 # Update the hand
                 hand = updateHand(hand, word)
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
-    print("Run out of letters. Total score: " + str(total))
+    if word=='.':
+    	print ("Goodbye!Total score: "+str(total)+" points.")
+    else:
+    	print("Run out of letters. Total score: " + str(total))
     print
 
 #
